@@ -1,0 +1,4 @@
+
+comando de início do server:
+npx expo start
+
