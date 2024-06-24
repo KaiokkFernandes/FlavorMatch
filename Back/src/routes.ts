@@ -9,6 +9,9 @@ const router = Router();
 
 //Rota de criação de usuario    
 router.post('/users', new CreateUserController().handle)
+
+//Rota pra buscar todos os usuarios no banco 
+
 //Rota de autenticação de usuario  
 router.post('/session', new AuthUsersController().handle)  
 
