@@ -68,3 +68,12 @@ model Local{
   type        String   // o tipo de local (restaurante, bar, café, etc) 
   encontro     Encontro[]
 }
+
+model Message{
+  id   String    @id @default(cuid())  
+  fromUserId String 
+  toUserId   String 
+  message String
+  createdAt DateTime @default(now())  
+  updatedAt DateTime @updatedAt    
+}
