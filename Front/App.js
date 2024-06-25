@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useCallback } from 'react';
+import { Text, View } from 'react-native';
+import * as SplashScreen from 'expo-splash-screen'; 
+import { NativeRouter, Route } from 'react-router-native';
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeRouter>
+      <View onLayout={onLayoutRootView}>
+        <Route exact path="/" component={Home} />
+        <Route path="/create" component={Create} />
+        <Route path="/settings" component={Settings} />
+        <Route path="/message" component={Message} />
+        <Route path="/editprofile" component={EditProfile} />
+      </View>
+    </NativeRouter>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// Defina os componentes que serão usados nas rotas:
+const Home = () => <Text>Home Screen</Text>;
+const Create = () => <Text>Create Screen</Text>;
+const Settings = () => <Text>Settings Screen</Text>;
+const Message = () => <Text>Message Screen</Text>;
+const EditProfile = () => <Text>Edit Profile Screen</Text>;
