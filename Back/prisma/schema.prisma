@@ -63,9 +63,10 @@ model Encontro {
 
 model Local{
   id          String   @id @default(cuid())
-  name        String   // Nome do local
+  name        String   
   address     String
-  type        String   // o tipo de local (restaurante, bar, café, etc) 
+  type        String   
+  typeOfFood  String 
   encontro     Encontro[]
 }
 
