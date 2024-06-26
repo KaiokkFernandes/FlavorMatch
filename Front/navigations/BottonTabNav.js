@@ -7,6 +7,8 @@ import Home from "../screens/Home";
 import Message from "../screens/Message"; 
 import Profile from "../screens/Profile"; 
 import Settings from "../screens/Settings"; 
+import Login from "../screens/Login";
+
 const Tab = createBottomTabNavigator();
 import { Ionicons as Icon } from '@expo/vector-icons';
 
@@ -33,6 +35,9 @@ function BottonTabNav() {
           tabBarIcon: ({ color, size }) => {
             let iconName;
             switch (route.name) {
+              case 'Login':
+                iconName= 'home-outline';
+                break;
               case 'Home':
                 iconName = 'home-outline';
                 break;
@@ -57,6 +62,7 @@ function BottonTabNav() {
           inactiveTintColor: 'gray',
         }}
       >
+        <Tab.Screen name="Login" component={Login} />
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Create" component={Create} />
         <Tab.Screen name="Message" component={Message} />
