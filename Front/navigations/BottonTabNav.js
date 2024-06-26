@@ -1,16 +1,14 @@
 import { Platform, Text, View } from "react-native";
 import React, { Component } from "react";
-import {
-  SimpleLineIcons,
-  Fontisto,
-  MaterialCommunityIcons,
-  MaterialIcons,
-} from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import COLORS from "../constantes/colors";
-import { Create, Home, Message, Profile, Settings } from "../screens";
-
+import Create from "../screens/Create";   
+import Home from "../screens/Home";   
+import Message from "../screens/Message"; 
+import Profile from "../screens/Profile"; 
+import Settings from "../screens/Settings"; 
 const Tab = createBottomTabNavigator();
+import { Ionicons as Icon } from '@expo/vector-icons';
 
 const screenOptions = {
   tabBarShowLabel: false,
@@ -25,122 +23,48 @@ const screenOptions = {
     backgroundColor: COLORS.white,
     borderRadius: 15,
     height: 90,
-    ...styles.shadow,
   },
 };
 
-const BottonTabNav = () => {
-  return (
-    <Tab.Navigator screenOptions={screenOptions}>
-      <Tab.Screen
-        name="Create"
-        component={Home}
-        options={{
-          tabBarIcon: ({ focused }) => {
-            return (
-              <SimpleLineIcons
-                name="home"
-                size={24}
-                color={focused ? COLORS.primary : COLORS.black}
-              />
-            );
+function BottonTabNav() {
+    return (
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ color, size }) => {
+            let iconName;
+            switch (route.name) {
+              case 'Home':
+                iconName = 'home-outline';
+                break;
+              case 'Create':
+            iconName = 'create-outline';
+                break;
+              case 'Message':
+                iconName = 'chatbubbles-outline';
+                break;
+              case 'Profile':
+                iconName = 'person-outline';
+                break;
+              case 'Settings':
+                iconName = 'settings-outline';
+                break;
+            }
+            return <Icon name={iconName} size={size} color={color} />;
           },
+        })}
+        tabBarOptions={{
+          activeTintColor: 'tomato',
+          inactiveTintColor: 'gray',
         }}
-      />
-
-      <Tab.Screen
-        name="Create"
-        component={Message}
-        options={{
-          tabBarIcon: ({ focused }) => {
-            return (
-              <SimpleLineIcons
-                name="home"
-                size={24}
-                color={focused ? COLORS.primary : COLORS.secondary}
-              />
-            );
-          },
-        }}
-      />
-
-      <Tab.Screen
-        name="Create"
-        component={Message}
-        options={{
-          tabBarIcon: ({ focused }) => {
-            return (
-              <MaterialCommunityIcons
-                name="message-text-outline"
-                size={24}
-                color={focused ? COLORS.primary : COLORS.secondary}
-              />
-            );
-          },
-        }}
-      />
-      <Tab.Screen
-        name="Create"
-        component={Create}
-        options={{
-          tabBarIcon: ({ focused }) => {
-            return (
-              <View
-                style={{
-                  position: "absolute",
-                  top: -30,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: Platform.OS === "ios" ? 70 : 60,
-                  height: Platform.OS === "ios" ? 70 : 60,
-                  top: Platform.OS === "ios" ? -30 : -10,
-                  borderRadius: Platform.OS === "ios" ? 35 : 30,
-                  backgroundColor: COLORS.primary,
-                  borderColor: COLORS.white,
-                  ...styles.shadow,
-                }}
-              >
-                <Fontisto name="plus-a" size={24} color={COLORS.white} />
-              </View>
-            );
-          },
-        }}
-      />
-
-      <Tab.Screen
-        name="Settins"
-        component={Settings}
-        options={{
-          tabBarIcon: ({ focused }) => {
-            return (
-              <MaterialIcons
-                name="Settings"
-                size={24}
-                color={focused ? COLORS.primary : COLORS.secondary}
-              />
-            );
-          },
-        }}
-      />
-
-      <Tab.Screen
-        name="Profile"
-        compon
-        ent={Profile}
-        options={{
-          tabBarIcon: ({ focused }) => {
-            return (
-              <MaterialIcons
-                name="Profile"
-                size={24}
-                color={focused ? COLORS.primary : COLORS.secondary}
-              />
-            );
-          },
-        }}
-      />
-    </Tab.Navigator>
-  );
-};
-
-export default BottonTabNav;
+      >
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Create" component={Create} />
+        <Tab.Screen name="Message" component={Message} />
+        <Tab.Screen name="Profile" component={Profile} />
+        <Tab.Screen name="Settings" component={Settings} />
+      </Tab.Navigator>
+    );
+  }
+  
+  export default BottonTabNav;
+  

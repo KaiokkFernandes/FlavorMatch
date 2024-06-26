@@ -16,7 +16,7 @@ router.post('/users', new CreateUserController().handle)
 router.post('/session', new AuthUsersController().handle)  
 
 //Rota de detalhes do usuario   
-router.get('/me',  isAuthenticated, new DetailUserController().handle)
+router.get('/me', new DetailUserController().handle)
 
 router.post('/foodPreference',  FoodPreferenceController.createFoodPreference)   
 router.get('/foodPreference/:id', FoodPreferenceController.getFoodPreference)
