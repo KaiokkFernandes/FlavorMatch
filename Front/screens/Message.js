@@ -4,7 +4,7 @@ import React from 'react'
 export default function Message() {
   return (
     <View>
-      <Text>Message</Text>
+      <Text>Message</Text>  
     </View>
   )
 }

@@ -10,7 +10,7 @@ const restaurantes = [
   { nome: "Curry Corner", tipo: "Indiano" },
   { nome: "Taco Fiesta", tipo: "Mexicano" },
   // Adicione mais 10 restaurantes aqui
-];
+];  
 
 // Componente HomeScreen
 const Home = () => {

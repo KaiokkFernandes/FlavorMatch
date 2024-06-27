@@ -5,6 +5,7 @@ import { DetailUserController } from "./controllers/DetailUserController";
 import { isAuthenticated } from "./middlewares/isAuthenticated";
 import { FoodPreferenceController } from "./controllers/foodPreferenceController";
 import { CreateLocalController } from "./controllers/CreateLocalController";
+import { EncontroController } from "./controllers/EncontroController";
 
 const router = Router();
 
@@ -27,5 +28,8 @@ router.delete('/foodPreference/:id', FoodPreferenceController.deleteFoodPreferen
 
 //Rota para criar um novo local 
 router.post('/novoLocal', new CreateLocalController().handle)
+
+//rota para criar um novo encontro para usuario de acordo com suas preferencias por tipo de comida 
+router.post('/Encontro', new EncontroController().createWithPreference);
 
 export {router};
