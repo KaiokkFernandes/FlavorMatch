@@ -2,10 +2,23 @@ import { View, Text, StyleSheet, TextInput } from 'react-native'
 import React, { useState } from 'react'
 import { FullWindowOverlay } from 'react-native-screens';
 import { Button } from 'react-native-paper';
+import axios from 'axios';
 
 export default function Home() {
-  const [user, setUser] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
+
+  const authUser = async () => {
+    try {
+      const response = await axios.post('http://localhost:3333/users', {
+        email: email,
+        password: password
+      }
+    )} catch (error) {
+      console.error('Erro ao buscar os dados do usuário:', error);
+    }
+  };
+
 
   return (
     <View style={styles.container}>
@@ -15,19 +28,22 @@ export default function Home() {
       <Text style={styles.text1}>Insira seu usuário</Text>
       <TextInput
         style={styles.textBox}
-        //placeholder="teste@teste"
-        value={user}
-        onChangeText={setUser}
+        value={email}
+        onChangeText={setEmail}
+        keyboardType='email_adress'
        />
        <Text style={styles.text1}>Insira sua senha</Text>
        <TextInput
        style={styles.textBox}
-        //placeholder="maionese123"
         value={password}
         onChangeText={setPassword}
+        secureTextEntry={true}
         />
 
-        <Button style={styles.button}> botão aqui</Button>
+        <Button style={styles.button}
+        model="contained"
+        onPress= { authUser }
+        >Login</Button>
         
     </View>    
     </View>
