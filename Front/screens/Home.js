@@ -1,21 +1,43 @@
-// Importa React e os componentes necessários do React Native
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import Header from '../componentes/Header/Header';
-// Importa o Header que você criou
-  // Ajuste o caminho conforme necessário
+import { ScrollView, StyleSheet } from 'react-native';
+import { Card, Title, Paragraph } from 'react-native-paper';
 
-export default function Home() {
+// Dados dos restaurantes
+const restaurantes = [
+  { nome: "Sushi Place", tipo: "Japonês" },
+  { nome: "Burger Town", tipo: "Americano" },
+  { nome: "Pasta Central", tipo: "Italiano" },
+  { nome: "Curry Corner", tipo: "Indiano" },
+  { nome: "Taco Fiesta", tipo: "Mexicano" },
+  // Adicione mais 10 restaurantes aqui
+];
+
+// Componente HomeScreen
+const Home = () => {
   return (
-    <View style={styles.container}>
-      <Header userImage="https://linkparaaimagem.com/foto.jpg" />
-      {/* Outros componentes da tela Home podem ser colocados aqui */}
-    </View>
+    <ScrollView style={styles.container}>
+      {restaurantes.map((restaurante, index) => (
+        <Card style={styles.card} key={index}>
+          <Card.Content>
+            <Title>{restaurante.nome}</Title>
+            <Paragraph>{restaurante.tipo}</Paragraph>
+          </Card.Content>
+        </Card>
+      ))}
+    </ScrollView>
   );
-}
+};
 
+// Estilos
 const styles = StyleSheet.create({
   container: {
-    flex: 1
-  }
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  card: {
+    margin: 10,
+    backgroundColor: 'red', 
+  },
 });
+
+export default Home;

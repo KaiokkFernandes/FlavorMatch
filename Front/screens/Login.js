@@ -10,11 +10,13 @@ export default function Home() {
 
   const authUser = async () => {
     try {
-      const response = await axios.post('http://localhost:3333/users', {
+      const response = await axios.post('http://localhost:3333/session', {
         email: email,
-        password: password
-      }
-    )} catch (error) {
+        password: password        
+      });
+      console.log('Autenticado com sucesso:', response.data);
+      Alert.alert("Sucesso", "Você está autenticado!");
+    } catch (error) {
       console.error('Erro ao buscar os dados do usuário:', error);
     }
   };
