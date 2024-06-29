@@ -21,7 +21,7 @@ const Home = () => {
           <Card.Content>
             <Title>{restaurante.nome}</Title>
             <Paragraph>{restaurante.tipo}</Paragraph>
-          </Card.Content>
+          </Card.Content>|
         </Card>
       ))}
     </ScrollView>

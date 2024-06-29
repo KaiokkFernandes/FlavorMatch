@@ -1,56 +1,49 @@
-import { View, Text, StyleSheet, TextInput } from 'react-native'
-import React, { useState } from 'react'
-import { FullWindowOverlay } from 'react-native-screens';
-import { Button } from 'react-native-paper';
+import React, { useState } from 'react';
+import { View, Text, TextInput, StyleSheet, Button, Alert } from 'react-native';
 import axios from 'axios';
 
-export default function Home() {
+function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('')
+  const [password, setPassword] = useState('');
 
   const authUser = async () => {
     try {
       const response = await axios.post('http://localhost:3333/session', {
         email: email,
-        password: password        
+        password: password
       });
-      console.log('Autenticado com sucesso:', response.data);
       Alert.alert("Sucesso", "Você está autenticado!");
+      navigation.navigate('Home');
     } catch (error) {
-      console.error('Erro ao buscar os dados do usuário:', error);
+      console.error('Erro na autenticação:', error);
+      Alert.alert("Erro", "Falha na autenticação!");
     }
   };
 
-
   return (
     <View style={styles.container}>
-    <View><Text style={styles.title}>FlavorMatch</Text></View>
-    <View>
-      <Text style={{ color: 'yellow', margin: 50 }}>Autenticação</Text>
-      <Text style={styles.text1}>Insira seu usuário</Text>
+      <Text style={styles.title}>FlavorMatch</Text>
       <TextInput
         style={styles.textBox}
         value={email}
         onChangeText={setEmail}
-        keyboardType='email_adress'
-       />
-       <Text style={styles.text1}>Insira sua senha</Text>
-       <TextInput
-       style={styles.textBox}
+        placeholder="Email"
+        keyboardType='email-address'
+      />
+      <TextInput
+        style={styles.textBox}
         value={password}
         onChangeText={setPassword}
+        placeholder="Senha"
         secureTextEntry={true}
-        />
-
-        <Button style={styles.button}
-        model="contained"
-        onPress= { authUser }
-        >Login</Button>
-        
-    </View>    
+      />
+      <Button
+        title="Login"
+        onPress={authUser}
+        color="#FCAB10"
+      />
     </View>
-    
-  )
+  );
 } 
 
 const styles = StyleSheet.create({
@@ -80,3 +73,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#FCAB10'
   }
 });
+
+export default LoginScreen;
