@@ -1,52 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
-import axios from 'axios';
+import React, { useState } from 'react';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 const UserProfile = () => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const response = await axios.get('http://localhost:3333/me', {
-          headers: {
-            'Authorization': `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0iLCJpYXQiOjE3MTk2ODg3NTgsImV4cCI6MTcyMjI4MDc1OCwic3ViIjoiY2x5MGd6Nmx3MDAwMGc2OWxmczFta2xyNSJ9.gg-M3hFNz7OPTiYEZfJzgaYxDrIUjjFsjcgWABa61kk"}`,
-          }
-        });
-        setUser(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Erro ao buscar os dados do usuário:', error);
-        setLoading(false);
-      }
-    };
-
-    fetchUserData();
-  }, []);
-
-  if (loading) {
-    return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#0000ff" />
-      </View>
-    );
-  }
-
-  if (!user) {
-    return (
-      <View style={styles.loadingContainer}>
-        <Text>Não foi possível carregar os dados do usuário.</Text>
-      </View>
-    );
-  }
+  const [user, setUser] = useState({
+    profileImage: require('../assets/perfil/Perfil.png'),
+    name: 'Lucas Medeiros',
+    username: 'CasLu',
+    email: 'luquinhas33@gmail.com',
+    bio: '  Gosto de comida japonesa e de jogar videogame. AMO A ROBERTA!! ',
+  });
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
           style={styles.profileImage}
-          source={{ uri: user.profileImage || 'https://linkparadefault.com/foto.jpg' }}
+          source={user.profileImage}
         />
         <TouchableOpacity>
           <Text style={styles.editProfileText}>Editar imagem de perfil</Text>
@@ -78,11 +47,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F8F8F8',
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   header: {
     alignItems: 'center',
