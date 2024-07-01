@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Button, Alert } from 'react-native';
 import axios from 'axios';
 
@@ -75,3 +75,5 @@ const styles = StyleSheet.create({
 });
 
 export default LoginScreen;
+
+*/

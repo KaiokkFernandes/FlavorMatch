@@ -11,7 +11,7 @@ const UserProfile = () => {
       try {
         const response = await axios.get('http://localhost:3333/me', {
           headers: {
-            'Authorization': `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlVXNlcjJAYWRtIiwiaWF0IjoxNzE3NTAyNDU2LCJleHAiOjE3MjAwOTQ0NTYsInN1YiI6ImNsdzV0a2s3ZDAwMDBidjRkMGdhaDhwdDUifQ.L_QR6I2U4jsJZxDtgtOwS0LvngXRYNHIHLtHN18djyM"}`,
+            'Authorization': `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0iLCJpYXQiOjE3MTk2ODg3NTgsImV4cCI6MTcyMjI4MDc1OCwic3ViIjoiY2x5MGd6Nmx3MDAwMGc2OWxmczFta2xyNSJ9.gg-M3hFNz7OPTiYEZfJzgaYxDrIUjjFsjcgWABa61kk"}`,
           }
         });
         setUser(response.data);

@@ -16,19 +16,19 @@ import {
 const Messages = [
   {
     id: '1',
-    userName: '',
+    userName: 'La Casa Mexicana',
     userImg: require('../assets/encontro/encontro1.jpg'),
     messageTime: '4 mins ago',
     messageText:
-      'Hey there, this is my test for a post of my social app in React Native.',
+      'lorem ipsum is simply dummy text of the printing and typesetting industry. ',
   },
   {
     id: '2',
-    userName: 'John Doe',
+    userName: 'Royale Burguer',  
     userImg: require('../assets/encontro/encontro2.jpg'),
     messageTime: '2 hours ago',
     messageText:
-      'Hey there, this is my test for a post of my social app in React Native.',
+      'lorem ipsum is simply dummy text of the printing and typesetting industry. ',  
   }, 
 ];
 

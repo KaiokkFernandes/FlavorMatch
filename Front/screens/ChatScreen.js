@@ -11,22 +11,22 @@ const ChatScreen = () => {
     setMessages([
       {
         _id: 1,
-        text: 'Hello developer',
+        text: 'Vamos marcar as 20:30!',
         createdAt: new Date(),
         user: {
           _id: 2,
           name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
+          avatar: 'https://picsum.photos/140/140?random=1',
         },
       },
       {
         _id: 2,
-        text: 'Hello world',
+        text: 'Boa noite, quando será nosso encontro?',
         createdAt: new Date(),
         user: {
           _id: 1,
           name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
+          avatar: 'https://picsum.photos/140/140?random=2',
         },
       },
     ]);

@@ -2,25 +2,24 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './screens/Home';
-import LoginScreen from './screens/Login';
 import BottonTabNav from './navigations/BottonTabNav';
-
+import ChatScreen from './screens/ChatScreen';
 const Stack = createStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-    <Stack.Navigator initialRouteName="Login">
-      <Stack.Screen
-        name="Login"
-        component={LoginScreen}
-        options={{ headerShown: false }}
-      />
+    <Stack.Navigator initialRouteName="Home">      
       <Stack.Screen
         name="Main"
         component={BottonTabNav}
         options={{ headerShown: false }}         
       />   
+        <Stack.Screen
+        name="Chat"
+        component={ChatScreen}
+        options={{ headerShown: false }}         
+      /> 
     </Stack.Navigator>
   </NavigationContainer>
 );
