@@ -17,15 +17,72 @@ const restaurantes = [
 //Abrir uma tela diferente ao clicar no encontro.
 
 // Componente HomeScreen
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
-      {restaurantes.map((restaurante, index) => (
-        <Pressable style={styles.press}>
-        <Card style={styles.card} key={index}>
+        <Pressable 
+          style={styles.press}
+          onPress={() => navigation.navigate('Create')}
+        >
+        <Card style={styles.card}>
           <Card.Content style={styles.content}>
-            <Title>{restaurante.nome}</Title>
-            <Paragraph style={{flex: 1}}>{restaurante.tipo}</Paragraph>
+            <Title>receba</Title>
+            <Paragraph style={{flex: 1}}>receba2</Paragraph>
+            <Image
+            style={styles.splash}
+            source={require('../assets/cosmo.jpg')}
+            resizeMode='contain'
+            />
+          </Card.Content>
+        </Card>
+        <Card style={styles.card}>
+          <Card.Content style={styles.content}>
+            <Title>receba</Title>
+            <Paragraph style={{flex: 1}}>receba2</Paragraph>
+            <Image
+            style={styles.splash}
+            source={require('../assets/cosmo.jpg')}
+            resizeMode='contain'
+            />
+          </Card.Content>
+        </Card>
+        <Card style={styles.card}>
+          <Card.Content style={styles.content}>
+            <Title>receba</Title>
+            <Paragraph style={{flex: 1}}>receba2</Paragraph>
+            <Image
+            style={styles.splash}
+            source={require('../assets/cosmo.jpg')}
+            resizeMode='contain'
+            />
+          </Card.Content>
+        </Card>
+        <Card style={styles.card}>
+          <Card.Content style={styles.content}>
+            <Title>receba</Title>
+            <Paragraph style={{flex: 1}}>receba2</Paragraph>
+            <Image
+            style={styles.splash}
+            source={require('../assets/cosmo.jpg')}
+            resizeMode='contain'
+            />
+          </Card.Content>
+        </Card>
+        <Card style={styles.card}>
+          <Card.Content style={styles.content}>
+            <Title>receba</Title>
+            <Paragraph style={{flex: 1}}>receba2</Paragraph>
+            <Image
+            style={styles.splash}
+            source={require('../assets/cosmo.jpg')}
+            resizeMode='contain'
+            />
+          </Card.Content>
+        </Card>
+        <Card style={styles.card}>
+          <Card.Content style={styles.content}>
+            <Title>receba</Title>
+            <Paragraph style={{flex: 1}}>receba2</Paragraph>
             <Image
             style={styles.splash}
             source={require('../assets/cosmo.jpg')}
@@ -34,7 +91,6 @@ const Home = () => {
           </Card.Content>
         </Card>
         </Pressable>
-      ))}
     </ScrollView>
   );
 };
@@ -47,7 +103,7 @@ const styles = StyleSheet.create({
   },
   card: {
     margin: 10,
-    backgroundColor: 'red', 
+    backgroundColor: 'blue', 
     flex: 1
   },
   splash: {
