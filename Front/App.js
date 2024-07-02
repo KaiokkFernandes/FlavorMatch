@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './screens/Home';
 import BottonTabNav from './navigations/BottonTabNav';
 import ChatScreen from './screens/ChatScreen';
+import FormDate from './screens/formDate';
 const Stack = createStackNavigator();
 
 function App() {
@@ -20,6 +21,12 @@ function App() {
         component={ChatScreen}
         options={{ headerShown: false }}         
       /> 
+
+      <Stack.Screen
+       name="Form"
+       component ={FormDate}
+       options={{ headerShown: false }}      
+      />
     </Stack.Navigator>
   </NavigationContainer>
 );
