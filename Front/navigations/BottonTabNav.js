@@ -6,6 +6,7 @@ import Message from '../screens/Message';
 import Profile from '../screens/Profile'; 
 import Settings from '../screens/Settings'; 
 import { Ionicons as Icon } from '@expo/vector-icons';
+import FormDate from '../screens/formDate';
 
 
 const Tab = createBottomTabNavigator();
@@ -30,7 +31,7 @@ function BottonTabNav() {
       })}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Create" component={Create} />
+      <Tab.Screen name="Create" component={FormDate} />
       <Tab.Screen name="Message" component={Message} />
       <Tab.Screen name="Profile" component={Profile} />
       <Tab.Screen name="Settings" component={Settings} />

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { Picker } from '@react-native-picker/picker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import { useNavigation } from '@react-navigation/native';
 const FormDate = () => {
   const [date, setDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -11,6 +11,7 @@ const FormDate = () => {
   const [showTimePicker, setShowTimePicker] = useState(false);
   const [people, setPeople] = useState('1');
   const [preference, setPreference] = useState('');
+  const navigation = useNavigation();
 
   const onChangeDate = (event, selectedDate) => {
     const currentDate = selectedDate || date;
@@ -25,7 +26,7 @@ const FormDate = () => {
   };
 
   const handleFormSubmit = () => {
-     // Aqui fica pra implentar a logica no back do formulario
+    navigation.navigate('AppointmentConfirmationScreen');
   };
 
   return (
@@ -95,20 +96,20 @@ const FormDate = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    background: '#FCAB10', 
     padding: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#ff0000',
+    color: '#A41C1E',
     marginBottom: 20,
     textAlign: 'center',
   },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#ff0000',
+    backgroundColor: '#A41C1E', 
     borderRadius: 5,
     padding: 10,
     marginBottom: 15,
@@ -127,12 +128,12 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   button: {
-    backgroundColor: '#ff0000',
+    backgroundColor: '#A41C1E', 
     padding: 15,
     borderRadius: 5,
     alignItems: 'center',
   },
-  buttonText: {
+  buttonText: { 
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',

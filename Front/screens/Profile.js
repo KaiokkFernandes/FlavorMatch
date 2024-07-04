@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const UserProfile = () => {
   const [user, setUser] = useState({
@@ -7,11 +8,16 @@ const UserProfile = () => {
     name: 'Lucas Medeiros',
     username: 'CasLu',
     email: 'luquinhas33@gmail.com',
-    bio: '  Gosto de comida japonesa e de jogar videogame. AMO A ROBERTA!! ',
+    bio: 'Gosto de comida japonesa e de jogar videogame. AMO A ROBERTA!!',
+    favoriteFoods: [
+      { name: 'Japonesa', icon: 'rice' },
+      { name: 'Mexicana', icon: 'taco' },
+      // Adicione mais comidas e ícones conforme necessário
+    ],
   });
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image
           style={styles.profileImage}
@@ -38,8 +44,16 @@ const UserProfile = () => {
           <Text style={styles.infoTitle}>Bio</Text>
           <Text style={styles.infoText}>{user.bio}</Text>
         </View>
+        <View style={styles.infoRow}>
+          <Text style={styles.infoTitle}>Comidas Favoritas</Text>
+          <View style={styles.foodIcons}>
+            {user.favoriteFoods.map((food, index) => (
+              <Icon key={index} name={food.icon} size={24} color="#444444" />
+            ))}
+          </View>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -83,6 +97,10 @@ const styles = StyleSheet.create({
   },
   infoText: {
     color: '#444444',
+  },
+  foodIcons: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 

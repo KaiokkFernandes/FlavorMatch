@@ -5,6 +5,8 @@ import Home from './screens/Home';
 import BottonTabNav from './navigations/BottonTabNav';
 import ChatScreen from './screens/ChatScreen';
 import FormDate from './screens/formDate';
+import AppointmentConfirmationScreen from './screens/ConfirmDateScreen';
+import RestaurantDetailsScreen from './screens/DetailsDate';
 const Stack = createStackNavigator();
 
 function App() {
@@ -27,6 +29,18 @@ function App() {
        component ={FormDate}
        options={{ headerShown: false }}      
       />
+ 
+      <Stack.Screen
+       name="AppointmentConfirmationScreen"
+       component ={AppointmentConfirmationScreen}
+       options={{ headerShown: false }}      
+      />
+      <Stack.Screen 
+      name="RestaurantDetailsScreen"
+      component={RestaurantDetailsScreen}
+      options={{ headerShown: false }}  
+      />
+      
     </Stack.Navigator>
   </NavigationContainer>
 );
