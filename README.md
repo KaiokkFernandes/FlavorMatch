@@ -5,9 +5,12 @@ Bem-vindo ao FlavorMatch, o aplicativo inovador de encontros gastronômicos que 
 ## Sobre o Aplicativo
 
 O FlavorMatch tem como objetivo reunir pessoas que compartilham os mesmos interesses gastronômicos para uma refeição em restaurantes escolhidos aleatoriamente, de acordo com as preferências alimentares dos usuários. É a maneira perfeita de conhecer novas pessoas, desfrutar de suas comidas favoritas e descobrir novos lugares!
-![WhatsApp Image 2024-07-04 at 00 38 02 (1)](https://github.com/KaiokkFernandes/FlavorMatch/assets/148721400/ddd8abe2-8fea-4f11-929e-dcff8fc08418)
-![WhatsApp Image 2024-07-04 at 00 38 02](https://github.com/KaiokkFernandes/FlavorMatch/assets/148721400/ae07e307-4a1b-4575-a20d-90b112467b9a)
 ![WhatsApp Image 2024-07-04 at 00 38 02 (2)](https://github.com/KaiokkFernandes/FlavorMatch/assets/148721400/e36c5638-464e-40be-af00-c94fdd188380)
+
+![WhatsApp Image 2024-07-04 at 00 38 02 (1)](https://github.com/KaiokkFernandes/FlavorMatch/assets/148721400/ddd8abe2-8fea-4f11-929e-dcff8fc08418)
+
+![WhatsApp Image 2024-07-04 at 00 38 02](https://github.com/KaiokkFernandes/FlavorMatch/assets/148721400/ae07e307-4a1b-4575-a20d-90b112467b9a)
+
 
 ## Funcionalidades
 
