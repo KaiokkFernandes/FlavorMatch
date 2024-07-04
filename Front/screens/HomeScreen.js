@@ -5,6 +5,8 @@ import { StatusBar } from 'expo-status-bar';
 import * as Icon from 'react-native-feather';
 import { ScrollView } from 'react-native-gesture-handler';
 import { featured } from '../constantes';
+import { featured2 } from '../constantes';
+import { featured3 } from '../constantes';
 import FeaturedRow from '../componentes/Header/featuredRow';
 
 export default function HomeScreen() {
@@ -41,7 +43,7 @@ export default function HomeScreen() {
         {/*featured*/}
         <View ClassName="mt-5">
           {
-            [featured, featured, featured].map((item,index)=>{
+            [featured3, featured, featured2].map((item,index)=>{
               return (
                 <FeaturedRow 
                   key={index}

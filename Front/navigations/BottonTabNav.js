@@ -1,6 +1,5 @@
 import React, { Profiler } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from '../screens/Home';
 import Create from '../screens/Create';
 import Message from '../screens/Message';
 import Profile from '../screens/Profile'; 
@@ -18,7 +17,6 @@ function BottonTabNav() {
         tabBarIcon: ({ color, size }) => {
           let iconName;
           switch (route.name) {
-            case 'Home': iconName = 'home-outline'; break;
             case 'HomeScreen': iconName = 'home-outline'; break;
             case 'Create': iconName = 'create-outline'; break;
             case 'Message': iconName = 'chatbubbles-outline'; break;
@@ -31,7 +29,6 @@ function BottonTabNav() {
         tabBarStyle: { position: 'absolute', backgroundColor: 'white', borderTopColor: 'transparent', height: 60 }
       })}
     >
-      <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="HomeScreen" component={HomeScreen} />
       <Tab.Screen name="Create" component={Create} />
       <Tab.Screen name="Message" component={Message} />

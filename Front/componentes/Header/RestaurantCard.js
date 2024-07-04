@@ -19,6 +19,7 @@ export default function RestaurantCard({item}) {
                     </View>
                     <View style={styles.locationContainer}>
                         <Icon.MapPin color="grey" width="15" height="15" />
+                        <Text style={styles.rating}>{item.location}</Text>
                     </View>
                 </View>
             </View>
