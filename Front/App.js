@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './screens/Home';
 import BottonTabNav from './navigations/BottonTabNav';
 import ChatScreen from './screens/ChatScreen';
 const Stack = createStackNavigator();
@@ -9,7 +8,7 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-    <Stack.Navigator initialRouteName="Home">      
+    <Stack.Navigator initialRouteName="Main">      
       <Stack.Screen
         name="Main"
         component={BottonTabNav}
