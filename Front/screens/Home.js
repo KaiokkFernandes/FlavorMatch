@@ -1,92 +1,111 @@
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 import React from 'react';
-import { View, Image, ScrollView, StyleSheet, TouchableOpacity, Text } from 'react-native';
-import { Card, Title, Paragraph } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
+import * as Icon from 'react-native-feather';
+import { ScrollView } from 'react-native-gesture-handler';
+import { featured } from '../constantes';
+import { featured2 } from '../constantes';
+import { featured3 } from '../constantes';
+import FeaturedRow from '../componentes/Header/featuredRow';
 
-const restaurantes = [
-  { nome: "Sushi Place", tipo: "Japonês" },
-  { nome: "Burger Town", tipo: "Americano" },
-  { nome: "Pasta Central", tipo: "Italiano" },
-  { nome: "Curry Corner", tipo: "Indiano" },
-  { nome: "Taco Fiesta", tipo: "Mexicano" },
-];
-
-const Home = () => {
-  const navigation = useNavigation();
-
+export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Image source={{ uri: '../assets/logo/FlavorMatch.png' }} style={styles.logo} />  
-        <Image source={{ uri: '../assets/perfil/Perfil.png' }} style={styles.userPhoto} />
+    <SafeAreaView style={styles.safeArea}>
+      <StatusBar barStyle="dark-content" />
+      {/* search bar */}
+      <View style={styles.container}>
+        <View style={styles.searchContainer}>
+          <Icon.Search height={25} width={25} stroke="gray" />
+          <TextInput placeholder="Restaurantes" style={styles.textInput} />
+          <View style={styles.locationContainer}>
+            <Icon.MapPin height={20} width={20} stroke="gray" />
+            <Text style={styles.locationText}>Santa Maria, SM</Text>
+          </View>
+        </View>
+        <View style={styles.filterIconContainer}>
+          <Icon.Sliders height={20} width={20} strokeWidth={2.5} stroke="white" />
+        </View>
       </View>
-      <ScrollView style={styles.scrollView}>
-        {restaurantes.map((restaurante, index) => (
-          <Card style={styles.card} key={index}>
-            <Card.Content>
-              <Title>{restaurante.nome}</Title>
-              <Paragraph>{restaurante.tipo}</Paragraph>
-            </Card.Content>
-          </Card>
-        ))}
+
+
+      {/* main */}
+
+      <ScrollView showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+            paddingBottom: 20
+        }}
+      >
+        {/* categories deveria ser chamado aqui. Retirado por motivos de Kkkaio */}
+        
+
+
+        {/*featured*/}
+        <View ClassName="mt-5">
+          {
+            [featured3, featured, featured2].map((item,index)=>{
+              return (
+                <FeaturedRow 
+                  key={index}
+                  title={item.title}
+                  restaurants={item.restaurants}
+                  description={item.description}
+                />
+              )
+            })
+          }
+        </View>
+
+
+
       </ScrollView>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Form')}>
-        <Text style={styles.buttonText}>Marcar Encontro</Text>
-      </TouchableOpacity>
-    </View>
+
+      
+
+
+
+    </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  container: {
+  safeArea: {
     flex: 1,
-    backgroundColor: '#fff',
   },
-  header: {
+  container: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: 10,
-    backgroundColor: '#FF0000',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
+    paddingHorizontal: 16,
+    paddingBottom: 8,
   },
-  logo: {
-    width: 40,
-    height: 40,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  userPhoto: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-  },
-  scrollView: {
-    flex: 1,
-  },
-  card: {
-    margin: 10,
-    backgroundColor: 'red',
-  },
-  button: {
-    backgroundColor: '#ff0000',
-    padding: 15,
-    borderRadius: 5,
+  searchContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
-    margin: 10,
-    position: 'absolute',
-    bottom: 10,
-    left: 10,
-    right: 10,
+    flex: 1,
+    padding: 8,
+    borderRadius: 25,
+    borderWidth: 1,
+    borderColor: '#D1D5DB',
   },
-  buttonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+  textInput: {
+    flex: 1,
+    marginLeft: 8,
+  },
+  locationContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderLeftWidth: 1,
+    borderLeftColor: '#D1D5DB',
+    paddingLeft: 8,
+    marginLeft: 8,
+  },
+  locationText: {
+    color: '#6B7280',
+  },
+  filterIconContainer: {
+    padding: 8,
+    backgroundColor: '#D1D5DB',
+    borderRadius: 25,
+    marginLeft: 8,
   },
 });
-
-export default Home;

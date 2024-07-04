@@ -1,12 +1,11 @@
 import React, { Profiler } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from '../screens/Home';
-import Create from '../screens/Create';
 import Message from '../screens/Message';
 import Profile from '../screens/Profile'; 
 import Settings from '../screens/Settings'; 
 import { Ionicons as Icon } from '@expo/vector-icons';
 import FormDate from '../screens/formDate';
+import HomeScreen from '../screens/Home';
 
 
 const Tab = createBottomTabNavigator();
@@ -30,7 +29,7 @@ function BottonTabNav() {
         tabBarStyle: { position: 'absolute', backgroundColor: 'white', borderTopColor: 'transparent', height: 60 }
       })}
     >
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Create" component={FormDate} />
       <Tab.Screen name="Message" component={Message} />
       <Tab.Screen name="Profile" component={Profile} />
