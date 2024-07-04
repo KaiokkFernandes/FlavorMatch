@@ -6,6 +6,7 @@ import Message from '../screens/Message';
 import Profile from '../screens/Profile'; 
 import Settings from '../screens/Settings'; 
 import { Ionicons as Icon } from '@expo/vector-icons';
+import HomeScreen from '../screens/HomeScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -18,6 +19,7 @@ function BottonTabNav() {
           let iconName;
           switch (route.name) {
             case 'Home': iconName = 'home-outline'; break;
+            case 'HomeScreen': iconName = 'home-outline'; break;
             case 'Create': iconName = 'create-outline'; break;
             case 'Message': iconName = 'chatbubbles-outline'; break;
             case 'Profile': iconName = 'person-outline'; break;
@@ -30,6 +32,7 @@ function BottonTabNav() {
       })}
     >
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="HomeScreen" component={HomeScreen} />
       <Tab.Screen name="Create" component={Create} />
       <Tab.Screen name="Message" component={Message} />
       <Tab.Screen name="Profile" component={Profile} />
