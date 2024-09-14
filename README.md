@@ -1,44 +1,43 @@
 # FlavorMatch
 
-Bem-vindo ao FlavorMatch, o aplicativo inovador de encontros gastronômicos que conecta amantes da comida com base em suas preferências culinárias! Se você está procurando explorar novos sabores e fazer novas amizades, o FlavorMatch é o aplicativo perfeito para você.
+Welcome to FlavorMatch, the innovative food matching app that connects food lovers based on their culinary preferences! If you're looking to explore new flavors and make new friends, FlavorMatch is the perfect app for you.
 
-## Sobre o Aplicativo
+## About the App
 
-O FlavorMatch tem como objetivo reunir pessoas que compartilham os mesmos interesses gastronômicos para uma refeição em restaurantes escolhidos aleatoriamente, de acordo com as preferências alimentares dos usuários. É a maneira perfeita de conhecer novas pessoas, desfrutar de suas comidas favoritas e descobrir novos lugares!
+FlavorMatch aims to bring together people who share the same food interests for a meal at randomly chosen restaurants according to users' food preferences. It’s the perfect way to meet new people, enjoy your favorite dishes, and discover new places!
 ![WhatsApp Image 2024-07-04 at 00 38 02 (2)](https://github.com/KaiokkFernandes/FlavorMatch/assets/148721400/e36c5638-464e-40be-af00-c94fdd188380)
 
 ![WhatsApp Image 2024-07-04 at 00 38 02 (1)](https://github.com/KaiokkFernandes/FlavorMatch/assets/148721400/ddd8abe2-8fea-4f11-929e-dcff8fc08418)
 
 ![WhatsApp Image 2024-07-04 at 00 38 02](https://github.com/KaiokkFernandes/FlavorMatch/assets/148721400/ae07e307-4a1b-4575-a20d-90b112467b9a)
 
+## Features
 
-## Funcionalidades
+- **Personalized Profile**: Create your profile and select your favorite cuisines, from Japanese to Mexican, along with a wide variety of options.
+- **Food Match**: Receive automated recommendations for meetups with users who share your food tastes.
+- **Restaurant Selection**: The app chooses a restaurant that caters to the culinary preferences of the meetup participants.
+- **Meetup Scheduling**: Pick dates and times that work for you and your new food-loving friends.
+- **Feedback and Reviews**: After each meetup, rate your experience so we can continue improving FlavorMatch.
 
-- **Perfil Personalizado**: Crie seu perfil e escolha suas culinárias favoritas, de japonesa a mexicana, passando por uma ampla variedade de opções.
-- **Match Gastronômico**: Receba recomendações automatizadas de encontros com usuários que compartilham dos seus gostos culinários.
-- **Seleção de Restaurante**: O aplicativo escolhe um restaurante que atenda às preferências culinárias dos participantes do encontro.
-- **Agendamento de Encontros**: Escolha datas e horários que funcionem para você e para seus novos amigos gastronômicos.
-- **Feedback e Avaliações**: Após cada encontro, avalie sua experiência para que possamos continuar melhorando o FlavorMatch.
+## Technologies Used
 
-## Tecnologias Utilizadas
+- **Frontend**: Developed with React Native for a smooth and responsive experience on mobile devices.
+- **Backend**: Built using Node.js, providing a robust and scalable backend.
 
-- **Frontend**: Desenvolvido com React Native para uma experiência suave e responsiva em dispositivos móveis.
-- **Backend**: Construído utilizando Node.js, proporcionando um backend robusto e escalável.
+## Installation
 
-## Instalação
+To start using FlavorMatch, follow these simple steps:
 
-Para começar a usar o FlavorMatch, siga estas etapas simples:
-
-1. Clone o repositório:
+1. Clone the repository:
    ```bash
-   git clone https://github.com/seu-usuario/flavormatch.git
+   git clone https://github.com/your-username/flavormatch.git
    ```
-2. Instale as dependências:
+2. Install dependencies:
    ```bash
    cd flavormatch
    npm install
    ```
-3. Inicie o servidor:
+3. Start the server:
    ```bash
    npm start
    ```
